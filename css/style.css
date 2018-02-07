@@ -25,6 +25,12 @@ h1 {
 #back {
   display: none;
 }
+#loader {
+  display: none;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
 hr {
   margin-bottom: 2px;
   margin-top: 5px;

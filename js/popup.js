@@ -1,4 +1,6 @@
 function loadAPOD(url) {
+  $("#loader").css("display", "block");
+  $("#apod").css("display", "none");
   $.ajax({
     url: url,
     success: function(result){
@@ -34,6 +36,8 @@ function loadAPOD(url) {
     } else {
       document.getElementById("nextButton").style.display = "inline";
     }
+    $("#apod").css("display", "block");
+    $("#loader").css("display", "none");
   }
   });
 
