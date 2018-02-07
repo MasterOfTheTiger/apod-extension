@@ -21,6 +21,7 @@ function loadAPOD(url) {
       $("#apod_img_id").css("display", "block");
       $("#apod_img_id").attr("src", result.url);
       $("#apod_img_id").attr("alt", result.url);
+      $("#apod_img_link").attr("href", result.url);
     }
     //$("#reqObject").text(url);
     //$("#returnObject").text(JSON.stringify(result, null, 4));

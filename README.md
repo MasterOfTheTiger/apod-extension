@@ -15,3 +15,4 @@ If you want to help, please do. I don't know how to use GitHub very well. So it 
 ##Added Since 1.2.2
 These are things that I have uploaded since I released version 1.2.2.
 - Removed image borders
+- Added link to image
