@@ -47,6 +47,7 @@ p {
 
 #apod_title {
   font-family: Arial;
+  text-align: left;
 }
 a {
   color: #61dcf4;
