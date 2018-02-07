@@ -10,9 +10,9 @@ body {
 }
 #apod_img_id {
   margin: 5px, 0px, 5px, 0px;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   vertical-align: middle;
-  width: 95%;
+  width: 98%;
   height: 100%;
 }
 h1 {
@@ -63,6 +63,9 @@ a {
   font-size: 13px;
   font-family: arial;
   border-width: thin;
+}
+small {
+  margin
 }
 
 .button:hover {
