@@ -5,10 +5,11 @@ body {
   overflow-x: hidden;
   font-family: sans-serif;
   padding: 10px;
-  padding-top: 10px;
+  font-size: 14px;
+  text-align: justify;
 }
 #apod_img_id {
-  margin: 5px;
+  margin: 5px, 0px, 5px, 0px;
   border: 2px solid black;
   vertical-align: middle;
   width: 95%;
@@ -37,7 +38,9 @@ hr {
   border: none;
   border: 1px dashed #000;
 }
-
+p {
+  width: 98%;
+}
 .arrow {
   size: 10%;
 }
