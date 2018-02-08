@@ -61,6 +61,9 @@ function getYesterdaysDate() {
     //return date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
     //return date.getFullYear() + '-' + (date.getMonth()+1) + '/' + date.getDate();
 }
+//Pull text from user inputbox
+//var data = document.getElementById("this_input").value;
+//Save it to the localStorage variable which will always remember what you store in it
 
 document.getElementById("backButton").addEventListener("click", function(){
   days = days - 1;
@@ -85,6 +88,9 @@ document.getElementById("back").addEventListener("click", function(){
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 });
+document.getElementById("star").addEventListener("click", function(){
+  localStorage["favorite"] = getYesterdaysDate();
+})
 
 $(document).ready(function(){
    $('body').on('click', 'a', function(){
