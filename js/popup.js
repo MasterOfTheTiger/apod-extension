@@ -82,7 +82,7 @@ document.getElementById("sendButton").addEventListener("click", function(){
 document.getElementById("back").addEventListener("click", function(){
   document.getElementById("controls").style.display = "inline";
   document.getElementById('back').style.display = "none";
-  url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
+  url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 });
 

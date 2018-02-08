@@ -17,3 +17,4 @@ These are things that I have uploaded since I released version 1.2.2.
 - Removed image borders
 - Added link to image
 - Changed + added hover notes
+- Made back button go to last viewed picture instead of today's
