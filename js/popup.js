@@ -46,7 +46,7 @@ function loadAPOD(url) {
     $("#apod").css("display", "block");
     $("#loader").css("display", "none");
     $("#loadingbox").css("display", "none");
-    clearTimeout(timeoutVariable);
+    clearTimeout(internet);
   }
   });
 
