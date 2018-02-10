@@ -2,6 +2,8 @@ function loadAPOD(url) {
   //Shows loader
   $("#loader").css("display", "block");
   $("#apod").css("display", "none");
+  $("#internet").css("display", "none");
+  setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
   $.ajax({
     url: url,
     success: function(result){

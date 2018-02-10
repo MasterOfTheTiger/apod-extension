@@ -15,22 +15,25 @@ body {
   width: 98%;
   height: 100%;
 }
-h1 {
-  text-align:center;
-}
+h1 {text-align:center;}
 #date {
   max-width: 90px;
   font-size: 12px;
   font-family: monospace;
 }
-#back {
-  display: none;
-}
+#back {display: none;}
 #loader {
   display: none;
   margin: auto;
   margin-top: 150px;
   margin-bottom: 150px;
+}
+#internet {
+  display: none;
+  position: absolute;
+  top: 35%;
+  width: 94%;
+  text-align: center;
 }
 hr {
   margin-bottom: 2px;
@@ -38,20 +41,13 @@ hr {
   border: none;
   border: 1px dashed #000;
 }
-p {
-  width: 98%;
-}
-.arrow {
-  size: 10%;
-}
-
+p {width: 98%;}
+.arrow {size: 10%;}
 #apod_title {
   font-family: Arial;
   text-align: left;
 }
-a {
-  color: #61dcf4;
-}
+a {color: #61dcf4;}
 .button {
   border-radius: 5px;
   border-style: solid;
@@ -64,7 +60,6 @@ a {
   font-family: arial;
   border-width: thin;
 }
-
 .button:hover {
   background-color: #d8d8d8;
   cursor: default;
