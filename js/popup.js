@@ -4,7 +4,7 @@ function loadAPOD(url) {
   $("#apod").css("display", "none");
   $("#internet").css("display", "none");
   $("#loadingbox").css("display", "initial");
-  setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
+  var internet = setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
   $.ajax({
     url: url,
     success: function(result){
@@ -46,6 +46,7 @@ function loadAPOD(url) {
     $("#apod").css("display", "block");
     $("#loader").css("display", "none");
     $("#loadingbox").css("display", "none");
+    clearTimeout(timeoutVariable)
   }
   });
 
