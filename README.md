@@ -19,3 +19,4 @@ These are things that I have uploaded since I released version 1.2.2.
 - Changed + added hover notes
 - Made back button go to last viewed picture instead of today's
 - Added a lot of comments in JS code
+- Added "Check Internet Connection" message when loading for more than 5 seconds.

@@ -3,6 +3,7 @@ function loadAPOD(url) {
   $("#loader").css("display", "block");
   $("#apod").css("display", "none");
   $("#internet").css("display", "none");
+  $("#loadingbox").css("display", "initial");
   setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
   $.ajax({
     url: url,
@@ -44,6 +45,7 @@ function loadAPOD(url) {
     //Hides loader and displays image and information
     $("#apod").css("display", "block");
     $("#loader").css("display", "none");
+    $("#loadingbox").css("display", "none");
   }
   });
 
