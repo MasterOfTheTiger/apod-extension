@@ -10,17 +10,11 @@ body {
 }
 #apod_img_id {
   margin: 5px, 0px, 5px, 0px;
-  /*border: 2px solid black;*/
   vertical-align: middle;
   width: 98%;
   height: 100%;
 }
 h1 {text-align:center;}
-#date {
-  max-width: 90px;
-  font-size: 12px;
-  font-family: monospace;
-}
 #back {display: none;}
 #loader {
   display: none;
@@ -67,4 +61,19 @@ a {color: #61dcf4;}
 .button:active {
   background-color: lightblue;
   border-color: lightblue
+}
+#date {
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #d8d8d8;
+  padding: 5px;
+  padding-right: 2px;
+  padding-left: 2px;
+  font-size: 13px;
+  font-family: arial;
+  border-width: thin;
+  max-width: 90px;
+  font-size: 12px;
+  font-family: monospace;
+  text-align: center;
 }
