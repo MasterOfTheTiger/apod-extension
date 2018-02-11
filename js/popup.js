@@ -110,14 +110,21 @@ document.getElementById("back").addEventListener("click", function(){
 /*document.getElementById("star").addEventListener("click", function(){
   localStorage["favorite"] = getYesterdaysDate();
 })*/
+function closeSharer() {
+  document.getElementById("sharing").style.display = "none";
+  document.getElementById("fade").style.display = "none";
+  document.getElementById("fade").removeEventListener("click", closeSharer)
+}
 document.getElementById("share").addEventListener("click", function(){
   document.getElementById("sharing").style.display = "block";
   document.getElementById("fade").style.display = "block";
+  setTimeout(function(){document.getElementById("fade").addEventListener("click", closeSharer)}, 600);
 });
 document.getElementById("closeSharing").addEventListener("click", function(){
   document.getElementById("sharing").style.display = "none";
   document.getElementById("fade").style.display = "none";
 });
+
 //Opens links in popup in new tab
 $(document).ready(function(){
    $('body').on('click', 'a', function(){
