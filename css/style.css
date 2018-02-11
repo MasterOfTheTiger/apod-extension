@@ -47,8 +47,8 @@ a {color: #61dcf4;}
   border-style: solid;
   border-color: #d8d8d8;
   padding: 6px;
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
   background-color: #efefef;
   font-size: 13px;
   font-family: arial;
@@ -76,4 +76,60 @@ a {color: #61dcf4;}
   font-size: 12px;
   font-family: monospace;
   text-align: center;
+}
+#share {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#sharing {
+  position: fixed;
+  display: none;
+  height: 70%;
+  width: 70%;
+  left: 15%;
+  top: 15%;
+  padding: 10px;
+  z-index: 1002;
+  overflow: auto;
+  background-color: white;
+  border-radius: 5px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 2px;
+  text-align: left;
+}
+#closeSharing {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  font-size: 200%;
+  color: red;
+  cursor: pointer;
+}
+.shareButton {
+  font-size: 300%;
+  padding: 6px;
+  width: 70px;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+}
+h3 {
+  margin-top: 0px;
+}
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
 }

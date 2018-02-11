@@ -10,12 +10,21 @@
   <title>APOD Popup</title>
 </head>
 <body class="w3-animate-top">
+  <div id="sharing" class="w3-animate-zoom">
+    <i class="fas fa-times" id="closeSharing"></i>
+    <h3>Share this Picture</h3>
+    <a class="shareButton button hint--top" aria-label="Email this image" id="mailImage" href="mailto:?subject=The%20Astronomy%20Picture%20Of%20The%20Day&body=Here is today's astronomy picture of the day:%0A"><i class="far fa-envelope"></i></a>
+    <a class="shareButton button hint--top" aria-label="Tweet this image" id="tweetImage" href="https://twitter.com/intent/tweet?text=Look at the astronomy picture of the day. https://apod.nasa.gov"><i class="fab fa-twitter"></i></a>
+    <a class="shareButton button hint--top" aria-label="Coming soon!" id="facebookImage"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div id="fade" class="black_overlay"></div>
   <span id="controls">
     <span class="button" id="backButton"><i class="fas fa-arrow-left"></i></span>
     <span class="button" id="nextButton"><i class="fas fa-arrow-right"></i></span>
     <input type="text" id="date" value="2018-02-06" />
     <span class="hint--bottom" aria-label="Type in a date in the form YYYY-MM-DD"><i class="fas fa-question-circle"></i></span>
     <span class="button" id="sendButton">Load</span>
+    <span class="button hint--left" id="share" aria-label="Share this picture"><i class="fas fa-share-alt"></i></span>
   </span>
   <span class="button hint--right" id="back" aria-label="Back to last picture viewed"><i class="fas fa-backward"></i></span>
   <br />
@@ -34,6 +43,7 @@
   <small id="foot">Images from <a href="https://apod.nasa.gov" id="more">NASA APOD</a> | Made by <a href="https://github.com/MasterOfTheTiger">MasterOfTheTiger</a> | <br /> Find this project on <a href="https://github.com/MasterOfTheTiger/apod-extension">GitHub</a> <i class="fab fa-github"></i>.</small>
   <script src="js/jquery.min.js"></script>
   <script src="js/moment.js"></script>
+  <script src="js/moment-tz.js"></script>
   <script src="js/popup.js"></script>
 </body>
 </html>

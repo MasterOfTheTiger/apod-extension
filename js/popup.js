@@ -25,6 +25,10 @@ function loadAPOD(url) {
       $("#apod_img_id").attr("src", result.url);
       $("#apod_img_id").attr("alt", result.url);
       $("#apod_img_link").attr("href", result.url);
+      var emailText = "mailto:?subject=" + result.title + " - Astronomy Picture of the Day" + "&body=" + result.explanation + "%0ALink to picture:%20" + result.url;
+      $("#mailImage").attr("href", emailText);
+      var tweetText = "https://twitter.com/intent/tweet?text=Check out this astronomy picture of the day:%20" + result.url;
+      $("#tweetImage").attr("href", tweetText);
     }
     $("#apod_explaination").text(result.explanation);
     $("#apod_title").text(result.title);
@@ -58,14 +62,17 @@ loadAPOD(url);
 var days = 0;
 //Gets date from days from current date
 function getYesterdaysDate() {
-    var date = new Date();
-    date.setDate(date.getDate()+days);
-    //Uses moment.js to change the format to a useable string
+    //Gets yesterday's date as object
+    var date = moment().add(days, 'days');
+    //Changes time zone to EST
+    date=date.tz('America/New_York');
+    //Changes the format to a useable string
     date = moment(date).format('YYYYMMDD');
     //Splits and puts dashes in between for use in the API
     date = date.split('');
     date.splice(4, 0, "-");
     date.splice(7, 0, "-");
+    console.log(date.join(""));
     return date.join("");
 }
 //Gets previous picture
@@ -100,9 +107,17 @@ document.getElementById("back").addEventListener("click", function(){
   loadAPOD(url);
 });
 //This does nothing right now, eventually that will be the code for the favorite button
-document.getElementById("star").addEventListener("click", function(){
+/*document.getElementById("star").addEventListener("click", function(){
   localStorage["favorite"] = getYesterdaysDate();
-})
+})*/
+document.getElementById("share").addEventListener("click", function(){
+  document.getElementById("sharing").style.display = "block";
+  document.getElementById("fade").style.display = "block";
+});
+document.getElementById("closeSharing").addEventListener("click", function(){
+  document.getElementById("sharing").style.display = "none";
+  document.getElementById("fade").style.display = "none";
+});
 //Opens links in popup in new tab
 $(document).ready(function(){
    $('body').on('click', 'a', function(){
