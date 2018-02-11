@@ -21,3 +21,5 @@ These are things that I have uploaded since I released version 1.2.2.
 - Added a lot of comments in JS code
 - Added "Check Internet Connection" message when loading for more than 5 seconds.
 - Styled date box
+- Fixed date inconsistency
+- Add share option for email and Twitter
