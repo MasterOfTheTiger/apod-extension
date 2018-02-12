@@ -77,6 +77,9 @@ function showSharing() {
     }
 }
 document.getElementById("share").addEventListener("click", showSharing);
+document.getElementById("apod").addEventListener("click", function(){
+  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+});
 
 //Deafult URL for today's picture
 var url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
