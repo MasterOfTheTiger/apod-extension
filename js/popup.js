@@ -29,6 +29,16 @@ function loadAPOD(url) {
       $("#mailImage").attr("href", emailText);
       var tweetText = "https://twitter.com/intent/tweet?text=Check out this astronomy picture of the day:%20" + result.url;
       $("#tweetImage").attr("href", tweetText);
+      var apodDate = result.date.split("-");
+      apodDate = apodDate.join("").split("");
+      apodDate.shift();
+      apodDate.shift();
+      apodDate = apodDate.join("");
+      console.log(result.date);
+      console.log(apodDate);
+      var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
+      console.log(fbText);
+      $("#facebookImage").attr("href", fbText);
     }
     $("#apod_explaination").text(result.explanation);
     $("#apod_title").text(result.title);
