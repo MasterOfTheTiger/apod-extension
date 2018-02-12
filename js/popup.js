@@ -67,6 +67,17 @@ function loadAPOD(url) {
   });
 
 }
+
+function showSharing() {
+    var x = document.getElementById("shareOptions");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+document.getElementById("share").addEventListener("click", showSharing);
+
 //Deafult URL for today's picture
 var url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
 loadAPOD(url);
@@ -127,15 +138,6 @@ function closeSharer() {
   document.getElementById("fade").style.display = "none";
   document.getElementById("fade").removeEventListener("click", closeSharer)
 }
-document.getElementById("share").addEventListener("click", function(){
-  document.getElementById("sharing").style.display = "block";
-  document.getElementById("fade").style.display = "block";
-  setTimeout(function(){document.getElementById("fade").addEventListener("click", closeSharer)}, 600);
-});
-document.getElementById("closeSharing").addEventListener("click", function(){
-  document.getElementById("sharing").style.display = "none";
-  document.getElementById("fade").style.display = "none";
-});
 
 //Opens links in popup in new tab
 $(document).ready(function(){

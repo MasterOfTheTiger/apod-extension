@@ -84,30 +84,8 @@ a {color: #61dcf4;}
   padding-top: 4px;
   padding-bottom: 4px;
 }
-#sharing {
-  position: fixed;
-  display: none;
-  height: 70%;
-  width: 70%;
-  left: 15%;
-  top: 15%;
-  padding: 10px;
-  z-index: 1002;
-  overflow: auto;
-  background-color: white;
-  border-radius: 5px;
-  border-color: gray;
-  border-style: solid;
-  border-width: 2px;
-  text-align: left;
-}
-#closeSharing {
-  position: absolute;
-  top: 13px;
-  right: 20px;
-  font-size: 200%;
-  color: red;
-  cursor: pointer;
+#shareOptions {
+  margin-top: 13px;
 }
 .shareButton {
   font-size: 250%;
