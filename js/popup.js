@@ -25,21 +25,23 @@ function loadAPOD(url) {
       $("#apod_img_id").attr("src", result.url);
       $("#apod_img_id").attr("alt", result.url);
       $("#apod_img_link").attr("href", result.url);
-      var emailText = "mailto:?subject=" + result.title + " - Astronomy Picture of the Day" + "&body=" + result.explanation + "%0ALink to picture:%20" + result.url;
-      $("#mailImage").attr("href", emailText);
-      var tweetText = "https://twitter.com/intent/tweet?text=Check out this astronomy picture of the day:%20" + result.url;
-      $("#tweetImage").attr("href", tweetText);
-      var apodDate = result.date.split("-");
-      apodDate = apodDate.join("").split("");
-      apodDate.shift();
-      apodDate.shift();
-      apodDate = apodDate.join("");
-      console.log(result.date);
-      console.log(apodDate);
-      var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
-      console.log(fbText);
-      $("#facebookImage").attr("href", fbText);
     }
+    //Updates share buttons
+    var apodDate = result.date.split("-");
+    apodDate = apodDate.join("").split("");
+    apodDate.shift();
+    apodDate.shift();
+    apodDate = apodDate.join("");
+    //Email
+    var emailText = "mailto:?subject=" + result.title + " - Astronomy Picture of the Day" + "&body=" + result.explanation + "%0ALink to picture:%20" + result.url;
+    $("#mailImage").attr("href", emailText);
+    //Twitter
+    var tweetText = "https://twitter.com/intent/tweet?text=Check out this astronomy picture of the day:%20" + "http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
+    $("#tweetImage").attr("href", tweetText);
+    //Facebook
+    var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
+    $("#facebookImage").attr("href", fbText);
+
     $("#apod_explaination").text(result.explanation);
     $("#apod_title").text(result.title);
     /* Text date no longer used

@@ -14,5 +14,6 @@ If you want to help, please do. I don't know how to use GitHub very well. So it 
 
 ## Added Since 1.3
 These are things that I have uploaded since I released version 1.3.
-- Added APOD twitter
+- Added APOD Twitter link to popup.html footer
 - Added sharing on Facebook support
+- Changed the way the Twitter sharing function works
