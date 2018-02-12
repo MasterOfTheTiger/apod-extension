@@ -121,8 +121,6 @@ document.getElementById("nextButton").addEventListener("click", function(){
 document.getElementById("sendButton").addEventListener("click", function(){
   document.getElementById("controls").style.display = "none";
   document.getElementById('back').style.display = "inline";
-  //Hide sharing options if Open
-  $("#sharing").css("display", "none");
   //Gets date in input box
   var datetoo = document.getElementById("date").value;
   //Requests image for the date
