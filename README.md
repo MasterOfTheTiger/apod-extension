@@ -18,4 +18,5 @@ These are things that I have uploaded since I released version 1.3.
 - Added sharing on Facebook support
 - Changed the way the Twitter sharing function works
 - Changed sharing from popup to dropdown menu
-- Added sharing to manually loaded images
+- Fixed sharing not displaying when image date entered manually
+- Removed pictures that were not in use
