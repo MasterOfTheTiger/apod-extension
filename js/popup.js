@@ -68,12 +68,12 @@ function loadAPOD(url) {
 
 }
 
+var shareOptions = document.getElementById("shareOptions");
 function showSharing() {
-    var x = document.getElementById("shareOptions");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+    if (shareOptions.className.indexOf("w3-show") == -1) {
+        shareOptions.className += " w3-show";
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        shareOptions.className = shareOptions.className.replace(" w3-show", "");
     }
 }
 document.getElementById("share").addEventListener("click", showSharing);
@@ -100,12 +100,16 @@ function getYesterdaysDate() {
 }
 //Gets previous picture
 document.getElementById("backButton").addEventListener("click", function(){
+  //Hide sharing options if Open
+  shareOptions.className = shareOptions.className.replace(" w3-show", "");
   days = days - 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 });
 //Gets next picture
 document.getElementById("nextButton").addEventListener("click", function(){
+  //Hide sharing options if Open
+  shareOptions.className = shareOptions.className.replace(" w3-show", "");
   days = days + 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
@@ -114,6 +118,8 @@ document.getElementById("nextButton").addEventListener("click", function(){
 document.getElementById("sendButton").addEventListener("click", function(){
   document.getElementById("controls").style.display = "none";
   document.getElementById('back').style.display = "inline";
+  //Hide sharing options if Open
+  $("#sharing").css("display", "none");
   //Gets date in input box
   var datetoo = document.getElementById("date").value;
   //Requests image for the date
@@ -133,11 +139,6 @@ document.getElementById("back").addEventListener("click", function(){
 /*document.getElementById("star").addEventListener("click", function(){
   localStorage["favorite"] = getYesterdaysDate();
 })*/
-function closeSharer() {
-  document.getElementById("sharing").style.display = "none";
-  document.getElementById("fade").style.display = "none";
-  document.getElementById("fade").removeEventListener("click", closeSharer)
-}
 
 //Opens links in popup in new tab
 $(document).ready(function(){

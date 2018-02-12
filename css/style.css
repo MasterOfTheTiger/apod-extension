@@ -85,7 +85,9 @@ a {color: #61dcf4;}
   padding-bottom: 4px;
 }
 #shareOptions {
-  margin-top: 13px;
+  position: fixed;
+  top: 42px;
+  right: 0px;
 }
 .shareButton {
   font-size: 250%;
