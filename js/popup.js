@@ -81,9 +81,6 @@ document.getElementById("apod").addEventListener("click", function(){
   shareOptions.className = shareOptions.className.replace(" w3-show", "");
 });
 
-//Deafult URL for today's picture
-var url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
-loadAPOD(url);
 //Sets image to today
 var days = 0;
 //Gets date from days from current date
@@ -101,22 +98,34 @@ function getYesterdaysDate() {
     console.log(date.join(""));
     return date.join("");
 }
-//Gets previous picture
-document.getElementById("backButton").addEventListener("click", function(){
+
+function lastImage() {
   //Hide sharing options if Open
   shareOptions.className = shareOptions.className.replace(" w3-show", "");
   days = days - 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
-});
-//Gets next picture
-document.getElementById("nextButton").addEventListener("click", function(){
+}
+function nextImage() {
   //Hide sharing options if Open
   shareOptions.className = shareOptions.className.replace(" w3-show", "");
   days = days + 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
-});
+}
+
+//Deafult URL for today's picture
+var url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
+loadAPOD(url);
+document.getElementById("controls").style.display = "none";
+document.getElementById('back').style.display = "inline";
+document.getElementById("controls").style.display = "inline";
+document.getElementById('back').style.display = "none";
+
+//Gets previous picture
+document.getElementById("backButton").addEventListener("click", lastImage);
+//Gets next picture
+document.getElementById("nextButton").addEventListener("click", nextImage);
 //Custom date send button
 document.getElementById("sendButton").addEventListener("click", function(){
   document.getElementById("controls").style.display = "none";
