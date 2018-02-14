@@ -86,8 +86,8 @@ a {color: #61dcf4;}
 }
 #shareOptions {
   position: fixed;
-  top: 42px;
-  right: 0px;
+  top: 41px;
+  right: 7px;
 }
 .shareButton {
   font-size: 250%;
