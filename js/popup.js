@@ -44,12 +44,6 @@ function loadAPOD(url) {
 
     $("#apod_explaination").text(result.explanation);
     $("#apod_title").text(result.title);
-    /* Text date no longer used
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var textDate = result.date.split("-");
-    textDate[1] = " " + months[Number(textDate[1])-1] + " ";
-    //$("#date").text(textDate.join(""));
-    */
     //Sets the date in the input box to the APOD date being viewed
     document.getElementById('date').value = result.date;
     //Hides next button when viewing today's picture
@@ -116,11 +110,16 @@ function nextImage() {
 
 //Deafult URL for today's picture
 var url = 'https://api.nasa.gov/planetary/apod?api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
+
+//Request today's picture
 loadAPOD(url);
+
+//Patch for very odd bug
 document.getElementById("controls").style.display = "none";
 document.getElementById('back').style.display = "inline";
 document.getElementById("controls").style.display = "inline";
 document.getElementById('back').style.display = "none";
+//End patch
 
 //Gets previous picture
 document.getElementById("backButton").addEventListener("click", lastImage);
@@ -145,10 +144,6 @@ document.getElementById("back").addEventListener("click", function(){
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 });
-//This does nothing right now, eventually that will be the code for the favorite button
-/*document.getElementById("star").addEventListener("click", function(){
-  localStorage["favorite"] = getYesterdaysDate();
-})*/
 
 //Opens links in popup in new tab
 $(document).ready(function(){
