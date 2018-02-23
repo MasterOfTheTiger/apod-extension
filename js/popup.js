@@ -79,18 +79,22 @@ document.getElementById("apod").addEventListener("click", function(){
 var days = 0;
 //Gets date from days from current date
 function getYesterdaysDate() {
-    //Gets yesterday's date as object
-    var date = moment().add(days, 'days');
-    //Changes time zone to EST
-    date=date.tz('America/New_York');
-    //Changes the format to a useable string
-    date = moment(date).format('YYYYMMDD');
-    //Splits and puts dashes in between for use in the API
-    date = date.split('');
-    date.splice(4, 0, "-");
-    date.splice(7, 0, "-");
-    console.log(date.join(""));
-    return date.join("");
+    var date = new Date()
+    date.setTime(date.getTime() + (days * (24*60*60*1000)));  // date.setTime takes milliseconds, to turns the days into milliseconds as well
+    
+    // Timezone
+    var localeOptions = {
+      timeZone: "America/New_York"
+    }
+
+    // Gets years, months and days in seperate functions, and then concatenates the array to a single string with dashes between
+    var dateString = [
+      date.toLocaleDateString("en-US", {...localeOptions, year: "numeric"}),
+      date.toLocaleDateString("en-US", {...localeOptions, month: "2-digit"}),
+      date.toLocaleDateString("en-US", {...localeOptions, day: "2-digit"})
+    ].join("-");
+    
+    return dateString;
 }
 
 function lastImage() {
