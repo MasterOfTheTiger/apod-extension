@@ -5,9 +5,9 @@ function loadAPOD(url) {
   $("#internet").css("display", "none");
   $("#loadingbox").css("display", "initial");
   var internet = setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
-  $.ajax({
-    url: url,
-    success: function(result){
+  fetch(url)
+  .then(response => response.json())
+  .then(result => {
     if("copyright" in result) {
       $("#copyright").text("Image Credits: " + result.copyright);
     }
@@ -57,7 +57,6 @@ function loadAPOD(url) {
     $("#loader").css("display", "none");
     $("#loadingbox").css("display", "none");
     clearTimeout(internet);
-  }
   });
 
 }
