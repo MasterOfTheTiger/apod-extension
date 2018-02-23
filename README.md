@@ -13,5 +13,6 @@ I have completely changed the extension, the only thing that is the same is the 
 If you want to help, please do. I don't know how to use GitHub very well. So it would be great.
 
 ## Added Since 1.3.1
-- Patched minor visual bug
+- Patched minor visual bug involving margins
 - Fixed dropdown menu lineup
+- Removed Moment.js in favor of standard JavaScript functions
