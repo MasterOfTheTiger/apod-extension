@@ -1,30 +1,34 @@
 function loadAPOD(url) {
   //Shows loader
-  $("#loader").css("display", "block");
-  $("#apod").css("display", "none");
-  $("#internet").css("display", "none");
-  $("#loadingbox").css("display", "initial");
+  var loader = document.getElementById('loader');
+  var apod = document.getElementById('apod');
+  var internet = document.getElementById('internet');
+  var loadingbox = document.getElementById('loadingbox');
+  loader.style.display = "block";
+  apod.style.display = "none";
+  internet.style.display = "none";
+  loadingbox.style.display = "initial";
   var internet = setTimeout(function(){document.getElementById('internet').style.display = "block"}, 5000);
   fetch(url)
   .then(response => response.json())
   .then(result => {
     if("copyright" in result) {
-      $("#copyright").text("Image Credits: " + result.copyright);
+      document.getElementById('copyright').innerHTML = 'Image Credits: ' + result.copyright;
     }
     else {
-      $("#copyright").text("Image Credits: " + "Public Domain");
+      document.getElementById('copyright').innerHTML = 'Image Credits: ' + 'Public Domain';
     }
     if(result.media_type == "video") {
-      $("#apod_img_id").css("display", "none");
-      $("#apod_vid_id").css("display", "block");
-      $("#apod_vid_id").attr("src", result.url);
+      document.getElementById('apod_img_id').style.display = 'none';
+      document.getElementById('apod_vid_id').style.display = 'block';
+      document.getElementById('apod_vid_id').src = result.url;
     }
     else {
-      $("#apod_vid_id").css("display", "none");
-      $("#apod_img_id").css("display", "block");
-      $("#apod_img_id").attr("src", result.url);
-      $("#apod_img_id").attr("alt", result.url);
-      $("#apod_img_link").attr("href", result.url);
+      document.getElementById('apod_vid_id').style.display = 'none';
+      document.getElementById('apod_img_id').style.display = 'block';
+      document.getElementById('apod_img_id').src = result.url;
+      document.getElementById('apod_img_id').alt = result.url;
+      document.getElementById('apod_img_link').href = result.url;
     }
     //Updates share buttons
     var apodDate = result.date.split("-");
@@ -34,16 +38,17 @@ function loadAPOD(url) {
     apodDate = apodDate.join("");
     //Email
     var emailText = "mailto:?subject=" + result.title + " - Astronomy Picture of the Day" + "&body=" + result.explanation + "%0ALink to picture:%20" + result.url;
-    $("#mailImage").attr("href", emailText);
+    document.getElementById("mailImage").href = emailText;
     //Twitter
     var tweetText = "https://twitter.com/intent/tweet?text=Check out this astronomy picture of the day:%20" + "http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
-    $("#tweetImage").attr("href", tweetText);
+    document.getElementById("tweetImage").href = tweetText;
     //Facebook
     var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
-    $("#facebookImage").attr("href", fbText);
+    document.getElementById("facebookImage").href = fbText;
 
-    $("#apod_explaination").text(result.explanation);
-    $("#apod_title").text(result.title);
+    //Add Title and explaination
+    document.getElementById('apod_explaination').innerHTML = result.explanation;
+    document.getElementById('apod_title').innerHTML = result.title;
     //Sets the date in the input box to the APOD date being viewed
     document.getElementById('date').value = result.date;
     //Hides next button when viewing today's picture
@@ -53,9 +58,9 @@ function loadAPOD(url) {
       document.getElementById("nextButton").style.display = "inline";
     }
     //Hides loader and displays image and information
-    $("#apod").css("display", "block");
-    $("#loader").css("display", "none");
-    $("#loadingbox").css("display", "none");
+    apod.style.display = "block";
+    loader.style.display = "none";
+    loadingbox.style.display = "none";
     clearTimeout(internet);
   });
 
@@ -80,7 +85,7 @@ var days = 0;
 function getYesterdaysDate() {
     var date = new Date()
     date.setTime(date.getTime() + (days * (24*60*60*1000)));  // date.setTime takes milliseconds, to turns the days into milliseconds as well
-    
+
     // Timezone
     var localeOptions = {
       timeZone: "America/New_York"
@@ -92,7 +97,7 @@ function getYesterdaysDate() {
       date.toLocaleDateString("en-US", {...localeOptions, month: "2-digit"}),
       date.toLocaleDateString("en-US", {...localeOptions, day: "2-digit"})
     ].join("-");
-    
+
     return dateString;
 }
 

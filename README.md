@@ -17,3 +17,4 @@ If you want to help, please do. I don't know how to use GitHub very well. So it 
 - Fixed dropdown menu lineup
 - Removed Moment.js in favor of standard JavaScript functions
 - Removed unnecessary Font-Awesome code
+- Removed JQuery library
