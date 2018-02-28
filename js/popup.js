@@ -153,10 +153,7 @@ document.getElementById("back").addEventListener("click", function(){
   loadAPOD(url);
 });
 
-//Opens links in popup in new tab
-$(document).ready(function(){
-   $('body').on('click', 'a', function(){
-     chrome.tabs.create({url: $(this).attr('href')});
-     return false;
-   });
-});
+//Makes scrolling in popup hide sharing buttons (patch)
+window.onscroll = function () {
+  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+};
