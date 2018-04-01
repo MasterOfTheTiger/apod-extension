@@ -13,3 +13,4 @@ I have completely changed the extension, the only thing that is the same is the 
 If you want to help, please do. I don't know how to use GitHub very well. So it would be great.
 
 ## Added Since 1.3.2
+- Hide sharing options on page scroll
