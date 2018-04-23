@@ -1,16 +1,17 @@
 # apod-extension
-Web extension to show the latest Astronomy Picture of the Day
+Web extension to show the latest Astronomy Picture of the Day.
 
-## What I have done
-I have completely changed the extension, the only thing that is the same is the icons. Here are some of the things I have done:
+Features:
+- View the astronomy picture of the day with a click of a button
+- View previous pictures with an easy switcher
+- Share pictures via email, Facebook, or Twitter
 
-- Sorting through images
-- Manually entering dates
-- W3.css
-- Footer
+[Get it for Firefox](https://addons.mozilla.org/en-US/firefox/addon/astronomy-picture/?src=userprofile). 
+
+No Chrome extension is available because I do not have a Chrome webstore developer account.
 
 ## Contributing
-If you want to help, please do. I don't know how to use GitHub very well. So it would be great.
+If you want to help, please do. Find some feature you would like to add or improve and work on it. 
 
-## Added Since 1.3.2
-- Hide sharing options on page scroll
+## Added Since 1.3.3
+- Removed w3.css
