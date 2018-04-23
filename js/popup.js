@@ -13,10 +13,10 @@ function loadAPOD(url) {
   .then(response => response.json())
   .then(result => {
     if("copyright" in result) {
-      document.getElementById('copyright').innerHTML = 'Image Credits: ' + result.copyright;
+      document.getElementById('copyright').textContent = 'Image Credits: ' + result.copyright;
     }
     else {
-      document.getElementById('copyright').innerHTML = 'Image Credits: ' + 'Public Domain';
+      document.getElementById('copyright').textContent = 'Image Credits: ' + 'Public Domain';
     }
     if(result.media_type == "video") {
       document.getElementById('apod_img_id').style.display = 'none';
@@ -47,8 +47,8 @@ function loadAPOD(url) {
     document.getElementById("facebookImage").href = fbText;
 
     //Add Title and explaination
-    document.getElementById('apod_explaination').innerHTML = result.explanation;
-    document.getElementById('apod_title').innerHTML = result.title;
+    document.getElementById('apod_explaination').textContent = result.explanation;
+    document.getElementById('apod_title').textContent = result.title;
     //Sets the date in the input box to the APOD date being viewed
     document.getElementById('date').value = result.date;
     //Hides next button when viewing today's picture
