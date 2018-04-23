@@ -103,14 +103,22 @@ function getYesterdaysDate() {
 
 function lastImage() {
   //Hide sharing options if Open
+<<<<<<< HEAD
   shareOptions.style.display = none;
+=======
+  shareOptions.className = shareOptions.style.display = none;
+>>>>>>> 798e4859554d3502f2e2fc9c425107c013f89743
   days = days - 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 }
 function nextImage() {
   //Hide sharing options if Open
+<<<<<<< HEAD
   shareOptions.style.display = 'none';
+=======
+  shareOptions.className = shareOptions.style.display = 'none';
+>>>>>>> 798e4859554d3502f2e2fc9c425107c013f89743
   days = days + 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
