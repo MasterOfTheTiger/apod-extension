@@ -68,15 +68,15 @@ function loadAPOD(url) {
 
 var shareOptions = document.getElementById("shareOptions");
 function showSharing() {
-    if (shareOptions.className.indexOf("w3-show") == -1) {
-        shareOptions.className += " w3-show";
+    if (shareOptions.style.display != 'block') {
+        shareOptions.style.display = 'block';
     } else {
-        shareOptions.className = shareOptions.className.replace(" w3-show", "");
+        shareOptions.style.display = 'none';
     }
 }
 document.getElementById("share").addEventListener("click", showSharing);
 document.getElementById("apod").addEventListener("click", function(){
-  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+  shareOptions.className = shareOptions.style.display = 'none';
 });
 
 //Sets image to today
@@ -103,14 +103,14 @@ function getYesterdaysDate() {
 
 function lastImage() {
   //Hide sharing options if Open
-  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+  shareOptions.style.display = none;
   days = days - 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
 }
 function nextImage() {
   //Hide sharing options if Open
-  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+  shareOptions.style.display = 'none';
   days = days + 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
@@ -155,5 +155,5 @@ document.getElementById("back").addEventListener("click", function(){
 
 //Makes scrolling in popup hide sharing buttons (patch)
 window.onscroll = function () {
-  shareOptions.className = shareOptions.className.replace(" w3-show", "");
+  shareOptions.style.display = 'none';
 };

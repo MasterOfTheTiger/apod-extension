@@ -2,14 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link href="css/w3.css" rel="stylesheet" />
   <link href="css/csspin.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
   <link href="fontawesome/css/fontawesome-all.css" type="text/css" rel="stylesheet" />
   <link rel="stylesheet" href="css/hint.min.css"></link>
   <title>APOD Popup</title>
 </head>
-<body class="w3-animate-top">
+<body>
   <div id="controls">
     <span class="button" id="backButton"><i class="fas fa-arrow-left"></i></span>
     <span class="button" id="nextButton"><i class="fas fa-arrow-right"></i></span>
@@ -18,18 +17,18 @@
     <span class="button" id="sendButton">Load</span>
   </div>
   <span class="button hint--right" id="back" aria-label="Back to last picture viewed"><i class="fas fa-backward"></i></span>
-  <span class="button hint--left" id="share" aria-label="Share this picture"><i class="fas fa-share-alt"></i></span>
-  <div id="sharing" class="w3-dropdown-click">
-    <div id="shareOptions" class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button" id="facebookImage"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="#" class="w3-bar-item w3-button" id="tweetImage"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="#" class="w3-bar-item w3-button" id="mailImage"><i class="far fa-envelope"></i> Email</a>
+  <div id="sharing">
+    <span class="button hint--left" id="share" aria-label="Share this picture"><i class="fas fa-share-alt"></i></span>
+    <div id="shareOptions">
+      <a href="#" id="facebookImage"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="#" id="tweetImage"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="#" id="mailImage"><i class="far fa-envelope"></i> Email</a>
     </div>
   </div>
   <br />
   <div id="loadingbox">
     <div id="loader" class="cp-spinner cp-round"></div>
-    <span id="internet" class="w3-animate-fading">Check your internet connection</span>
+    <span id="internet">Check your internet connection</span>
   </div>
   <div id="apod">
     <h3 id="apod_title"></h3>
