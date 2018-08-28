@@ -13,8 +13,4 @@ No Chrome extension is available because I do not have a Chrome webstore develop
 ## Contributing
 If you want to help, please do. Find some feature you would like to add or improve and work on it. 
 
-## Added Since 1.3.3
-- Removed w3.css
-- New icon
-- Diaspora* share feature
-- Mastodon share feature
+## Added Since 1.3.4
