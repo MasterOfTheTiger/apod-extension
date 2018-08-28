@@ -45,6 +45,9 @@ function loadAPOD(url) {
     //Facebook
     var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
     document.getElementById("facebookImage").href = fbText;
+    //Diaspora*
+    var dspText = "http://sharetodiaspora.github.io/?title=#APOD&url=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + '.html';
+    document.getElementById("diasporaImage").href = dspText;
 
     //Add Title and explaination
     document.getElementById('apod_explaination').textContent = result.explanation;
