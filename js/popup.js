@@ -82,7 +82,7 @@ function showSharing() {
 }
 document.getElementById("share").addEventListener("click", showSharing);
 document.getElementById("apod").addEventListener("click", function(){
-  shareOptions.className = shareOptions.style.display = 'none';
+  shareOptions.style.display = 'none';
 });
 
 //Sets image to today
@@ -109,7 +109,7 @@ function getYesterdaysDate() {
 
 function lastImage() {
   //Hide sharing options if Open
-  shareOptions.style.display = none;
+  shareOptions.style.display = "none";
   days = days - 1;
   url = 'https://api.nasa.gov/planetary/apod?date=' + getYesterdaysDate() + '&api_key=f88nlByrAKllCaklW1AtfDuqiAUKAinSni0EcjhW';
   loadAPOD(url);
