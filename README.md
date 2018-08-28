@@ -16,3 +16,5 @@ If you want to help, please do. Find some feature you would like to add or impro
 ## Added Since 1.3.3
 - Removed w3.css
 - New icon
+- Diaspora* share feature
+- Mastodon share feature

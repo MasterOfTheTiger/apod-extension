@@ -46,8 +46,11 @@ function loadAPOD(url) {
     var fbText = "https://www.facebook.com/share.php?u=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
     document.getElementById("facebookImage").href = fbText;
     //Diaspora*
-    var dspText = "http://sharetodiaspora.github.io/?title=#APOD&url=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + '.html';
+    var dspText = "https://sharetodiaspora.github.io/?title=" + result.title + " - Astronomy Picture of the Day" + "&url=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html";
     document.getElementById("diasporaImage").href = dspText;
+    //Mastodon
+    var mdnText = "https://www.addtoany.com/add_to/mastodon?linkurl=http%3A%2F%2Fapod.nasa.gov%2Fapod%2Fap" + apodDate + ".html" + "&linkname=" + result.title + " - Astronomy Picture of the Day";
+    document.getElementById("mastodonImage").href = mdnText;
 
     //Add Title and explaination
     document.getElementById('apod_explaination').textContent = result.explanation;
